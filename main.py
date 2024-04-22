@@ -98,6 +98,7 @@ for epoch in range(n_epoch):
     for i in range(len_dataloader):
 
         p = float(i + epoch * len_dataloader) / n_epoch / len_dataloader
+        # p表相对迭代进程,即当前迭代次数/总迭代次数
         alpha = 2. / (1. + np.exp(-10 * p)) - 1
 
         # training model using source data
